@@ -1,0 +1,40 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Clientes
+# @name Clientes_GET
+GET {{server}}/Clientes/Clientes
+Authorization: Basic {{username}}:{{password}}
+
+
+### Clientes
+# @name Clientes_POST
+POST {{server}}/Clientes/Clientes
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "14822500-5d86-4510-818a-46eedda7b1ea",
+  "nome": "nome-14822500"
+}
+
+
+### Clientes
+# @name Clientes_PATCH
+PATCH {{server}}/Clientes/Clientes/14822500-5d86-4510-818a-46eedda7b1ea
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "14822500-5d86-4510-818a-46eedda7b1ea",
+  "nome": "nome-14822500"
+}
+
+
+### Clientes
+# @name Clientes_DELETE
+DELETE {{server}}/Clientes/Clientes/14822500-5d86-4510-818a-46eedda7b1ea
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

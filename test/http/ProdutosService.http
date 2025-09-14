@@ -1,0 +1,46 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Produtos
+# @name Produtos_GET
+GET {{server}}/Produtos/Produtos
+Authorization: Basic {{username}}:{{password}}
+
+
+### Produtos
+# @name Produtos_POST
+POST {{server}}/Produtos/Produtos
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "26344640-5d1d-4772-b076-c34c046a72fd",
+  "nome": "nome-26344640",
+  "preco": 4900274.836,
+  "um": "640",
+  "peso": 124.159
+}
+
+
+### Produtos
+# @name Produtos_PATCH
+PATCH {{server}}/Produtos/Produtos/26344640-5d1d-4772-b076-c34c046a72fd
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "26344640-5d1d-4772-b076-c34c046a72fd",
+  "nome": "nome-26344640",
+  "preco": 4900274.836,
+  "um": "640",
+  "peso": 124.159
+}
+
+
+### Produtos
+# @name Produtos_DELETE
+DELETE {{server}}/Produtos/Produtos/26344640-5d1d-4772-b076-c34c046a72fd
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
