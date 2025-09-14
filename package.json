@@ -4,27 +4,42 @@
   "description": "A simple CAP project.",
   "dependencies": {
     "@sap/cds": "^9",
-    "express": "^4"
+    "express": "^4",
+    "@cap-js/hana": "^2",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": ">=8",
     "cds-launchpad-plugin": "^2.2.0",
-    "cds-plugin-ui5": "^0.13.0"
+    "cds-plugin-ui5": "^0.13.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.29"
   },
   "scripts": {
     "start": "cds-serve",
     "watch-clientes": "cds watch --open comp.container.com.clientes/index.html?sap-ui-xx-viewCache=false --livereload false",
     "watch-produtos": "cds watch --open comp.container.com.produtos/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-cockpit": "cds watch --open comp.container.com.cockpit/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-cockpit": "cds watch --open comp.container.com.cockpit/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy ComponentContainerApp --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
   "cds": {
     "requires": {
-      "db": {
-        "kind": "sqlite",
-        "credentials": {
-          "url": "development.db"
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "[development]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "development.db"
+          }
         }
-      }
+      },
+      "destinations": true
     }
   },
   "private": true,
