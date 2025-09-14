@@ -13,7 +13,8 @@
   "scripts": {
     "start": "cds-serve",
     "watch-clientes": "cds watch --open comp.container.com.clientes/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-produtos": "cds watch --open comp.container.com.produtos/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-produtos": "cds watch --open comp.container.com.produtos/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-cockpit": "cds watch --open comp.container.com.cockpit/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
