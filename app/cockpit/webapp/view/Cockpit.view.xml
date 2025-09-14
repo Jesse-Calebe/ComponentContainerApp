@@ -16,7 +16,13 @@
             alignItems="Start"
             height="100%"
         >
-            <HBox justifyContent="End" width="100%" backgroundDesign="Solid" class="sapTnt">
+            <HBox
+                id="headerHBox"
+                justifyContent="End"
+                width="100%"
+                backgroundDesign="Solid"
+                class="sapTnt"
+            >
                 <Button
                     id="toggleExpandButton"
                     icon="sap-icon://open-command-field"
@@ -58,6 +64,7 @@
             renderType="Bare"
             alignItems="Stretch"
             width="100%"
-            height="100%" />
+            height="100%"
+        />
     </HBox>
 </mvc:View>
