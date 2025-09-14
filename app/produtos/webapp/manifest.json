@@ -127,9 +127,27 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "DataField::ID": {
+                      "width": "20%"
+                    },
+                    "DataField::nome": {
+                      "width": "20%"
+                    },
+                    "DataField::peso": {
+                      "width": "20%"
+                    },
+                    "DataField::preco": {
+                      "width": "20%"
+                    },
+                    "DataField::um": {
+                      "width": "20%"
+                    }
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           }
         },
