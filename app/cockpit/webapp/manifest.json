@@ -111,6 +111,20 @@
           "target": [
             "TargetCockpit"
           ]
+        },
+        {
+          "name": "RouteCockpitProdutos",
+          "pattern": "Produtos",
+          "target": [
+            "TargetCockpit"
+          ]
+        },
+        {
+          "name": "RouteCockpitClientes",
+          "pattern": "Clientes",
+          "target": [
+            "TargetCockpit"
+          ]
         }
       ],
       "targets": {

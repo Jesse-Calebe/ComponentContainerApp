@@ -5,18 +5,24 @@ sap.ui.define(
 
     const COMP_MAP = {
       produtosKey: {
-        name: "comp.container.com.produtos",
-        manifest: true,
-        component: "produtos",
-        width: "100%",
-        height: "100%",
+        component: {
+          name: "comp.container.com.produtos",
+          manifest: true,
+          component: "produtos",
+          width: "100%",
+          height: "100%",
+        },
+        route: "RouteCockpitProdutos",
       },
       clientesKey: {
-        name: "comp.container.com.clientes",
-        manifest: true,
-        component: "clientes",
-        width: "100%",
-        height: "100%",
+        component: {
+          name: "comp.container.com.clientes",
+          manifest: true,
+          component: "clientes",
+          width: "100%",
+          height: "100%",
+        },
+        route: "RouteCockpitClientes",
       },
     };
 
@@ -38,11 +44,20 @@ sap.ui.define(
       onNavItemSelect(oEvent) {
         let oItem = oEvent.getParameter("item");
         let sNavSelectedKey = oItem.getKey();
-
+        let oCompMap = COMP_MAP[sNavSelectedKey];
         let oContentVbox = this.byId("contentVBox");
+        let oRouter = this.getOwnerComponent().getRouter();
+
         oContentVbox.destroyItems();
 
-        let oCompContainer = new ComponentContainer(COMP_MAP[sNavSelectedKey]);
+        if (!oCompMap) {
+          oRouter.navTo("RouteCockpit", {});
+          return;
+        }
+
+        oRouter.navTo(oCompMap.route, {});
+
+        let oCompContainer = new ComponentContainer(oCompMap.component);
         oContentVbox.addItem(oCompContainer);
       },
     });
