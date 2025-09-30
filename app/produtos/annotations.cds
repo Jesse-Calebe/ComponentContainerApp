@@ -29,6 +29,36 @@ annotate service.Produtos with @(
             Label : 'um',
         },
     ],
+    UI.Facets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Informations',
+            ID : 'Informations',
+            Target : '@UI.FieldGroup#Informations',
+        },
+    ],
+    UI.FieldGroup #Informations : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : nome,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : peso,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : preco,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : um,
+                Label : 'um',
+            },
+        ],
+    },
 );
 
 annotate service.Produtos with {
