@@ -23,3 +23,8 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+## Purpose
+
+SAP CAP (Cloud Application Programming) application with a UI5 frontend leveraging the ComponentContainer artifact to compose modular web interfaces.
+The structural entry point is a cockpit, responsible for orchestrating and rendering multiple Fiori applications, independent of whether they are implemented as freestyle UI5 apps or Fiori elements.
