@@ -97,7 +97,7 @@
       "config": {},
       "routes": [
         {
-          "pattern": "Clientes",
+          "pattern": ":?query:",
           "name": "ClientesList",
           "target": "ClientesList"
         },

@@ -97,7 +97,7 @@
       "config": {},
       "routes": [
         {
-          "pattern": "Produtos",
+          "pattern": ":?query:",
           "name": "ProdutosList",
           "target": "ProdutosList"
         },

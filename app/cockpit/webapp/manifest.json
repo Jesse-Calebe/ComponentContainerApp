@@ -110,14 +110,12 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
         "viewType": "XML",
         "path": "comp.container.com.cockpit.view",
-        "async": true,
-        "viewPath": "comp.container.com.cockpit.view"
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "propagateTitle": true
       },
       "routes": [
         {
@@ -130,7 +128,7 @@
           "pattern": "Produtos",
           "target": {
             "name": "produtosTarget",
-            "propagateTitle": true
+            "prefix": "pro"
           }
         },
         {
@@ -138,7 +136,7 @@
           "pattern": "Clientes",
           "target": {
             "name": "clientesTarget",
-            "propagateTitle": true
+            "prefix": "cli"
           }
         }
       ],
@@ -150,7 +148,7 @@
           "title": "Home"
         },
         "clientesTarget": {
-          "id": "clientesTarget",
+          "id": "clientesComponentTarget",
           "type": "Component",
           "usage": "clientes",
           "controlId": "mainContent",
@@ -159,7 +157,7 @@
           "title": "Clientes"
         },
         "produtosTarget": {
-          "id": "produtosTarget",
+          "id": "produtosComponentTarget",
           "type": "Component",
           "usage": "produtos",
           "controlId": "mainContent",
