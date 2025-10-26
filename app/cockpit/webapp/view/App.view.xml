@@ -46,7 +46,17 @@
         </tnt:sideContent>
 
         <tnt:mainContents>
-            <Page id="mainContent" />
+            <Page id="mainContent">
+                <customHeader>
+                    <Toolbar>
+                        <Breadcrumbs>
+                            <currentLocation>
+                                <Link text="{i18n>sideNavigation.home}" />
+                            </currentLocation>
+                        </Breadcrumbs>
+                    </Toolbar>
+                </customHeader>
+            </Page>
         </tnt:mainContents>
     </tnt:ToolPage>
 </mvc:View>
