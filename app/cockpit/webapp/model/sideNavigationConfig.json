@@ -13,7 +13,6 @@
         {
             "i18nText": "sideNavigation.clientes",
             "icon": "sap-icon://customer",
-            "key": "clientesRoute",
             "expanded": false,
             "items": [
                 {
@@ -25,8 +24,13 @@
         {
             "i18nText": "sideNavigation.produtos",
             "icon": "sap-icon://product",
-            "key": "produtosRoute",
-            "expanded": false
+            "expanded": false,
+            "items": [
+                {
+                    "i18nText": "sideNavigation.gerenciarProdutos",
+                    "key": "produtosRoute"
+                }
+            ]
         }
     ]
 }

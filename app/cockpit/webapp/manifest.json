@@ -121,28 +121,42 @@
       },
       "routes": [
         {
+          "name": "homeRoute",
+          "pattern": "",
+          "target": "homeTarget"
+        },
+        {
           "name": "produtosRoute",
           "pattern": "Produtos",
-          "target": [
-            "produtosTarget"
-          ]
+          "target": {
+            "name": "produtosTarget",
+            "propagateTitle": true
+          }
         },
         {
           "name": "clientesRoute",
           "pattern": "Clientes",
-          "target": [
-            "clientesTarget"
-          ]
+          "target": {
+            "name": "clientesTarget",
+            "propagateTitle": true
+          }
         }
       ],
       "targets": {
+        "homeTarget": {
+          "id": "homeTarget",
+          "type": "View",
+          "name": "Home",
+          "title": "Home"
+        },
         "clientesTarget": {
           "id": "clientesTarget",
           "type": "Component",
           "usage": "clientes",
           "controlId": "mainContent",
           "controlAggregation": "content",
-          "clearControlAggregation": true
+          "clearControlAggregation": true,
+          "title": "Clientes"
         },
         "produtosTarget": {
           "id": "produtosTarget",
@@ -150,7 +164,8 @@
           "usage": "produtos",
           "controlId": "mainContent",
           "controlAggregation": "content",
-          "clearControlAggregation": true
+          "clearControlAggregation": true,
+          "title": "Produtos"
         }
       }
     },

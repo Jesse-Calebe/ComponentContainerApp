@@ -13,6 +13,7 @@
             <tnt:SideNavigation id="idSideNavigation">
                 <tnt:item>
                     <tnt:NavigationList
+                        id="idSideNavigationList"
                         items="{ path: 'sideNavigation>/navigationList' }"
                         itemSelect="onSideNavigationItemSelect"
                     >
