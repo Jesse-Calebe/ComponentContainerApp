@@ -1,7 +1,50 @@
-<mvc:View controllerName="comp.container.com.cockpit.controller.App"
+<mvc:View
+    controllerName="comp.container.com.cockpit.controller.App"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    core:require="{formatter: 'comp/container/com/cockpit/model/formatter'}"
+    height="100%"
+>
+    <tnt:ToolPage id="idToolPage" sideExpanded="false">
+        <tnt:sideContent>
+            <tnt:SideNavigation id="idSideNavigation">
+                <tnt:item>
+                    <tnt:NavigationList
+                        items="{ path: 'sideNavigation>/navigationList' }"
+                        itemSelect="onSideNavigationItemSelect"
+                    >
+                        <tnt:items>
+                            <tnt:NavigationListItem
+                                text="{
+                                    path: 'sideNavigation>i18nText',
+                                    formatter: 'formatter.sideNavigationText.bind($controller)'
+                                }"
+                                icon="{sideNavigation>icon}"
+                                key="{sideNavigation>key}"
+                                expanded="{sideNavigation>expanded}"
+                                items="{sideNavigation>items}"
+                            >
+                                <tnt:items>
+                                    <tnt:NavigationListItem
+                                        text="{
+                                            path: 'sideNavigation>i18nText',
+                                            formatter: 'formatter.sideNavigationText.bind($controller)'
+                                        }"
+                                        key="{sideNavigation>key}"
+                                    />
+                                </tnt:items>
+                            </tnt:NavigationListItem>
+                        </tnt:items>
+                    </tnt:NavigationList>
+                </tnt:item>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <Page id="mainContent" />
+        </tnt:mainContents>
+    </tnt:ToolPage>
 </mvc:View>

@@ -1,0 +1,32 @@
+{
+    "navigationList": [
+        {
+            "icon": "sap-icon://open-command-field",
+            "key": "toggleSideNavigation"
+        },
+        {
+            "i18nText": "sideNavigation.home",
+            "icon": "sap-icon://home",
+            "key": "homeRoute",
+            "selected": true
+        },
+        {
+            "i18nText": "sideNavigation.clientes",
+            "icon": "sap-icon://customer",
+            "key": "clientesRoute",
+            "expanded": false,
+            "items": [
+                {
+                    "i18nText": "sideNavigation.gerenciarClientes",
+                    "key": "clientesRoute"
+                }
+            ]
+        },
+        {
+            "i18nText": "sideNavigation.produtos",
+            "icon": "sap-icon://product",
+            "key": "produtosRoute",
+            "expanded": false
+        }
+    ]
+}

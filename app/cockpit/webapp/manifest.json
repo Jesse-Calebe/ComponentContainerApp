@@ -57,6 +57,16 @@
   },
   "sap.ui5": {
     "flexEnabled": true,
+    "componentUsages": {
+      "clientes": {
+        "name": "comp.container.com.clientes",
+        "lazy": true
+      },
+      "produtos": {
+        "name": "comp.container.com.produtos",
+        "lazy": true
+      }
+    },
     "dependencies": {
       "minUI5Version": "1.140.0",
       "libs": {
@@ -83,6 +93,11 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
+      },
+      "sideNavigation": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/sideNavigationConfig.json",
+        "preload": true
       }
     },
     "resources": {
@@ -106,31 +121,36 @@
       },
       "routes": [
         {
-          "name": "RouteCockpit",
-          "pattern": ":?query:",
-          "target": [
-            "TargetCockpit"
-          ]
-        },
-        {
-          "name": "RouteCockpitProdutos",
+          "name": "produtosRoute",
           "pattern": "Produtos",
           "target": [
-            "TargetCockpit"
+            "produtosTarget"
           ]
         },
         {
-          "name": "RouteCockpitClientes",
+          "name": "clientesRoute",
           "pattern": "Clientes",
           "target": [
-            "TargetCockpit"
+            "clientesTarget"
           ]
         }
       ],
       "targets": {
-        "TargetCockpit": {
-          "id": "Cockpit",
-          "name": "Cockpit"
+        "clientesTarget": {
+          "id": "clientesTarget",
+          "type": "Component",
+          "usage": "clientes",
+          "controlId": "mainContent",
+          "controlAggregation": "content",
+          "clearControlAggregation": true
+        },
+        "produtosTarget": {
+          "id": "produtosTarget",
+          "type": "Component",
+          "usage": "produtos",
+          "controlId": "mainContent",
+          "controlAggregation": "content",
+          "clearControlAggregation": true
         }
       }
     },
