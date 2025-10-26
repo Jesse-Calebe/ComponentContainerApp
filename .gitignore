@@ -37,3 +37,5 @@ mta_archives/
 # Custom
 .vscode
 dist/
+
+development.db*
