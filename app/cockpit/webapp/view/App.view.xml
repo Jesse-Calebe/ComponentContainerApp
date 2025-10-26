@@ -26,6 +26,7 @@
                                 icon="{sideNavigation>icon}"
                                 key="{sideNavigation>key}"
                                 expanded="{sideNavigation>expanded}"
+                                selectable="{sideNavigation>selectable}"
                                 items="{sideNavigation>items}"
                             >
                                 <tnt:items>

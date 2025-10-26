@@ -14,6 +14,7 @@
             "i18nText": "sideNavigation.clientes",
             "icon": "sap-icon://customer",
             "expanded": false,
+            "selectable": false,
             "items": [
                 {
                     "i18nText": "sideNavigation.gerenciarClientes",
@@ -25,6 +26,7 @@
             "i18nText": "sideNavigation.produtos",
             "icon": "sap-icon://product",
             "expanded": false,
+            "selectable": false,
             "items": [
                 {
                     "i18nText": "sideNavigation.gerenciarProdutos",
